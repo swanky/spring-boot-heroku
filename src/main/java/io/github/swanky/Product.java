@@ -1,4 +1,4 @@
-package com.heroku.demo;
+package io.github.swanky;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
