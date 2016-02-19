@@ -23,7 +23,7 @@ public class HomeController {
 		this.repository = repository;
 	}
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(path = "/home", method = RequestMethod.GET)
 	public String home(ModelMap model) {
 		List<Product> products = repository.findAll();
 		model.addAttribute("products", products);
@@ -38,5 +38,15 @@ public class HomeController {
 			repository.save(product);
 		}
 		return home(model);
+	}
+
+	@RequestMapping(method = RequestMethod.GET)
+	public String index() {
+		return "index";
+	}
+
+	@RequestMapping(path = "/about", method = RequestMethod.GET)
+	public String about() {
+		return "about";
 	}
 }
