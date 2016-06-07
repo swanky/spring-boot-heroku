@@ -1,28 +1,39 @@
 package io.github.swanky;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(exclude = { "id" })
+@ToString(exclude = {})
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Product {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	@GeneratedValue
+	private Long id;
 
-	@NotEmpty
+	@Column(nullable = false)
 	private String name;
 
-	private int price;
+	private Integer price;
 
 	private String category;
 
 	private String description;
+
 }

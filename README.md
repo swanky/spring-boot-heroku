@@ -20,3 +20,7 @@ Amazon S3
 upload images
 
 智富寶
+
+http://g00glen00b.be/securing-your-rest-api-with-spring-security/
+
+http://info.michael-simons.eu/2014/02/20/developing-a-web-application-with-spring-boot-angularjs-and-java-8/

@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -18,7 +17,6 @@ public class HomeController {
 
 	private ProductRepository repository;
 
-	@Autowired
 	public HomeController(ProductRepository repository) {
 		this.repository = repository;
 	}
@@ -31,7 +29,7 @@ public class HomeController {
 		return "home";
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(path = "/home", method = RequestMethod.POST)
 	public String insertData(ModelMap model, @ModelAttribute("insertProduct") @Valid Product product,
 			BindingResult result) {
 		if (!result.hasErrors()) {
@@ -49,4 +47,5 @@ public class HomeController {
 	public String about() {
 		return "about";
 	}
+
 }
